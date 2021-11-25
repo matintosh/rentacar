@@ -13,17 +13,33 @@ export async function getUser(ctx: any) {
 }
 
 export async function getUserFromToken(token: string) {
-  console.log("TOKEN", token);
-
-  const { data } = await client.query({
-    context: {
-      headers: {
-        Authorization: "Bearer " + token,
-      },
+  const data = await fetch("https://polar-ravine-93732.herokuapp.com/graphql", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: "Bearer " + token,
     },
-    query: CURRENT_USER,
-    fetchPolicy: "network-only",
+    body: JSON.stringify({
+      query: `
+      query getUser {
+        self {
+          id
+          email
+          username
+          branch {
+            id
+          }
+        }
+      }
+      `,
+      variables: {
+        now: new Date().toISOString(),
+      },
+    }),
   });
 
-  return data;
+  const body = await data.json()
+
+
+  return body.data;
 }
