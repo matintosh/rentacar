@@ -162,6 +162,7 @@ export default function App({}: {}) {
           />
           <Button
             className={styles["upload-button"]}
+            // @ts-ignore
             onClick={() => uploadRef?.current?.click()}
           >
             {form?.images?.length ? "Add" : "Upload a picture"}

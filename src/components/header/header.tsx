@@ -27,7 +27,7 @@ export function Header() {
         <p className={styles["page-indicator"]}>Dashboard</p>
       </div>
       <div className={styles.options}>
-        <Input onChange={() => {}} />
+        <Input name="search" onChange={() => {}} />
         <FontAwesomeIcon icon={faCog} />
         <FontAwesomeIcon icon={faBell} />
         <FontAwesomeIcon icon={faSignOutAlt} onClick={handleLogOut} />

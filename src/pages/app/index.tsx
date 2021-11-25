@@ -12,9 +12,7 @@ export default function App({ user }: { user: any }) {
         {user &&
           user.self &&
           Object.entries(user.self).map(([name, value]) => (
-            <li key={name}>
-              {name}: {value?.toString()}
-            </li>
+            <li key={name}></li>
           ))}
       </ul>
       <Button>Set cookie</Button>
