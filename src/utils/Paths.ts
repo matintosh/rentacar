@@ -4,7 +4,7 @@ export const Paths = {
   login: "/auth/login",
 
   cars: "/app/cars",
-  newCar: "/app/cars/new",
+  newCar: "/app/car/new",
   users: "/app/users",
   customers: "/app/customers",
   bookings: "/app/bookings",

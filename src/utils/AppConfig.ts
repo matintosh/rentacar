@@ -9,5 +9,5 @@ export const AppConfig: {
   title: "Martinez Rent a Car",
   description: "Alquila tu auto aqui",
   locale: "es",
-  api_url: "http://localhost:1337",
+  api_url: "https://polar-ravine-93732.herokuapp.com",
 };

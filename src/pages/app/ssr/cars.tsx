@@ -36,40 +36,33 @@ export async function getServerSideProps(ctx: any) {
   const user_token = cookies.user_token;
 
   const { data } = await client.query({
-    context: {
-      headers: {
-        Authorization: "Bearer " + user_token,
-      },
-    },
     query: gql`
       query getCars {
-        self {
-          branch {
-            cars {
-              id
-              model
-              brand
-              price
-              plate
-              year
-              booking {
-                client {
-                  firstName
-                  lastName
+        branch(id: 1) {
+          cars {
+            id
+            model
+            brand
+            price
+            plate
+            year
+            booking {
+              client {
+                firstName
+                lastName
 
-                  avatar {
-                    url
-                    name
-                  }
+                avatar {
+                  url
+                  name
                 }
+              }
 
-                startDate
-                endDate
-              }
-              pictures {
-                url
-                name
-              }
+              startDate
+              endDate
+            }
+            pictures {
+              url
+              name
             }
           }
         }
@@ -79,5 +72,7 @@ export async function getServerSideProps(ctx: any) {
 
   console.log("DATA", data);
 
-  return { props: { cars: data.self.branch.cars } };
+  console.log(data);
+
+  return { props: { cars: data.branch.cars } };
 }

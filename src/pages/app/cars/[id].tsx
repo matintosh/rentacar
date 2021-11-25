@@ -36,8 +36,6 @@ export default function App({ cars }: { cars: any[] }) {
 export async function getStaticProps({
   params,
 }: GetStaticPropsContext<{ id: string }>) {
-
-  console.log("LLEGA AL STATIC PROPSS")
   const { data } = await client.query({
     query: gql`
       query getCars {

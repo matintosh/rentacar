@@ -24,14 +24,9 @@ export async function middleware(req: NextRequest) {
 
   const branch = user.self.branch.id;
 
-  console.log("LA BRANCH!", branch);
-
   const res = NextResponse.rewrite(req.url);
-  console.log("LA URL ", "/app/cars");
 
   if (req.cookies[BRANCH_COOKIE_NAME] !== branch) {
-    console.log("SE CAMBIA LA BRANCH A!", branch);
-
     res.cookie(BRANCH_COOKIE_NAME, branch);
 
     return res;

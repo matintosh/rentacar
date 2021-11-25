@@ -12,16 +12,16 @@ export async function middleware(req: NextRequest) {
   const token = checkAuth(req);
 
   if (!token) return NextResponse.next();
-  // let user;
-  // try {
-  //   user = await getUserFromToken(token);
-  // } catch (e) {
-  //   console.log(e);
-  // }
+  let user;
+  try {
+    user = await getUserFromToken(token);
+  } catch (e) {
+    console.log(e);
+  }
 
-  // if (user) {
-  return NextResponse.redirect("/app");
-  // } else {
-  // return NextResponse.next();
-  // }
+  if (user) {
+    return NextResponse.redirect("/app");
+  } else {
+    return NextResponse.next();
+  }
 }
