@@ -9,6 +9,8 @@ import Link from "next/link";
 
 import styles from "../cars/cars.module.scss";
 import { Paths } from "utils/Paths";
+import { findCars } from "lib/find-cars";
+import { BRANCH_COOKIE_NAME } from "../cars/_middleware";
 
 export default function App({ cars }: { cars: any[] }) {
   return (
@@ -33,46 +35,7 @@ export default function App({ cars }: { cars: any[] }) {
 
 export async function getServerSideProps(ctx: any) {
   const cookies = nookies.get(ctx);
-  const user_token = cookies.user_token;
+  const cars = await findCars(cookies[BRANCH_COOKIE_NAME]);
 
-  const { data } = await client.query({
-    query: gql`
-      query getCars {
-        branch(id: 1) {
-          cars {
-            id
-            model
-            brand
-            price
-            plate
-            year
-            booking {
-              client {
-                firstName
-                lastName
-
-                avatar {
-                  url
-                  name
-                }
-              }
-
-              startDate
-              endDate
-            }
-            pictures {
-              url
-              name
-            }
-          }
-        }
-      }
-    `,
-  });
-
-  console.log("DATA", data);
-
-  console.log(data);
-
-  return { props: { cars: data.branch.cars } };
+  return { props: { cars: cars } };
 }
