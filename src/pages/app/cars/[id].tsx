@@ -11,6 +11,7 @@ import styles from "./cars.module.scss";
 import { Paths } from "utils/Paths";
 import { GetStaticPropsContext } from "next";
 import { findCars } from "lib/find-cars";
+import { BRANCHES } from "graphql/queries/branches";
 
 export default function App({ cars }: { cars: any[] }) {
   console.log(cars);
@@ -37,7 +38,6 @@ export default function App({ cars }: { cars: any[] }) {
 export async function getStaticProps({
   params,
 }: GetStaticPropsContext<{ id: string }>) {
-
   const cars = await findCars(params?.id ?? "1");
 
   return {
@@ -48,23 +48,13 @@ export async function getStaticProps({
 }
 
 export async function getStaticPaths() {
-
   const { data } = await client.query({
-    query: gql`
-      query getBranches {
-        branches {
-          id
-          name
-        }
-      }
-    `,
+    query: BRANCHES,
   });
 
   const paths = data.branches.map((b: { id: number }) => ({
     params: { id: b.id },
   }));
-
-  console.log("LOS PPATHS", paths);
 
   return {
     paths,
