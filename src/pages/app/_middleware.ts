@@ -14,7 +14,12 @@ export async function middleware(req: NextRequest) {
   const token = checkAuth(req);
   if (!token) return NextResponse.redirect("/auth/login");
 
-  const user = await getUserFromToken(token);
+  let user;
+  try {
+    user = await getUserFromToken(token);
+  } catch (e) {
+    console.log(e);
+  }
   if (!user) return NextResponse.redirect("/auth/login");
 
   const branch = user.self.branch.id;
@@ -22,7 +27,7 @@ export async function middleware(req: NextRequest) {
   console.log("LA BRANCH!", branch);
 
   const res = NextResponse.rewrite(req.url);
-  console.log("LA URL ", '/app/cars')
+  console.log("LA URL ", "/app/cars");
 
   if (req.cookies[BRANCH_COOKIE_NAME] !== branch) {
     console.log("SE CAMBIA LA BRANCH A!", branch);

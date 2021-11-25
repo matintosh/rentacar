@@ -36,6 +36,8 @@ export default function App({ cars }: { cars: any[] }) {
 export async function getStaticProps({
   params,
 }: GetStaticPropsContext<{ id: string }>) {
+
+  console.log("LLEGA AL STATIC PROPSS")
   const { data } = await client.query({
     query: gql`
       query getCars {
@@ -79,6 +81,7 @@ export async function getStaticProps({
 }
 
 export async function getStaticPaths() {
+  console.log("LOS PPATHS")
 
   const { data } = await client.query({
     query: gql`
@@ -91,9 +94,14 @@ export async function getStaticPaths() {
     `,
   });
 
+
+
   const paths = data.branches.map((b: { id: number }) => ({
     params: { id: b.id },
   }));
+
+
+  console.log("LOS PPATHS", paths)
 
   return {
     paths,
