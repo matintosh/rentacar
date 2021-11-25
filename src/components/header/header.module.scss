@@ -1,0 +1,51 @@
+.header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+  color: var(--secondary);
+
+  .breadcrumbs {
+    .breadcrumbs-text {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      font-weight: var(--font-light);
+      font-size: var(--text-sm);
+      color: var(--secondary);
+      gap: var(--space-md);
+      p {
+        font-size: var(--text-sm);
+        opacity: 0.5;
+      }
+      span {
+        opacity: 1;
+      }
+    }
+    .page-indicator {
+      font-weight: var(--font-bold);
+    }
+  }
+  .options {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: var(--space-xl);
+
+    font-size: var(--text-md);
+
+    & > * {
+        cursor: pointer;
+    }
+
+    .signin {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: var(--space-lg);
+      p {
+        font-size: var(--text-sm);
+      }
+    }
+  }
+}

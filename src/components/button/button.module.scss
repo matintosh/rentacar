@@ -1,0 +1,26 @@
+.button {
+  border-radius: var(--radius-md);
+  color: var(--white);
+
+  box-shadow: var(--shadow);
+
+  background: var(--bs-gradient-color);
+
+  padding: var(--space-lg);
+
+  text-align: center;
+
+  cursor: pointer;
+
+  transition: transform 300ms ease-out;
+
+  user-select: none;
+
+  &:hover {
+    transform: scale(1.01);
+  }
+
+  &:active {
+      opacity: 0.8;
+  }
+}

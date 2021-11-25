@@ -1,0 +1,21 @@
+.layout {
+  display: grid;
+  grid-template-columns: 240px 1fr;
+  grid-template-rows: 100%;
+  padding: var(--space-xl);
+  height: 100vh;
+  width: 100vw;
+
+  main {
+    width: 100%;
+    padding: var(--space-2xl);
+
+    display: grid;
+    grid-template-rows: 60px calc(100% - 60px);
+
+    .content {
+      height: 100%;
+      overflow: auto;
+    }
+  }
+}

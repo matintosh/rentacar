@@ -1,0 +1,101 @@
+:root {
+  /* Colors */
+  --primary: #c01e2f;
+  --secondary: #67748e;
+  --accent: #ee7573;
+  --white: #ffffff;
+  --gray: #f7f8f9;
+
+  --bs-blue: #63b3ed;
+  --bs-indigo: #596cff;
+  --bs-purple: #6f42c1;
+  --bs-pink: #d63384;
+  --bs-red: #f56565;
+  --bs-orange: #fd7e14;
+  --bs-yellow: #fbd38d;
+  --bs-green: #81e6d9;
+  --bs-teal: #20c997;
+  --bs-cyan: #0dcaf0;
+  --bs-gray: #6c757d;
+  --bs-gray-dark: #343a40;
+  --bs-primary: #cb0c9f;
+  --bs-secondary: #8392ab;
+  --bs-success: #82d616;
+  --bs-info: #17c1e8;
+  --bs-warning: #fbcf33;
+  --bs-danger: #ea0606;
+  --bs-light: #e9ecef;
+  --bs-dark: #344767;
+  --bs-white: #fff;
+
+  --bs-gradient: linear-gradient(
+    180deg,
+    hsla(0, 0%, 100%, 0.15),
+    hsla(0, 0%, 100%, 0)
+  );
+
+  --bs-gradient-color: linear-gradient(310deg, var(--primary), var(--accent));
+
+  /* Fonts */
+  --main-font: "Poppins", sans-serif;
+  --bs-font-monospace: SFMono-Regular, Menlo, Monaco, Consolas,
+    "Liberation Mono", "Courier New", monospace;
+
+  /* Spacings */
+  --space-sm: 2px;
+  --space-md: 4px;
+  --space-lg: 8px;
+  --space-xl: 16px;
+  --space-2xl: 32px;
+
+  /* Border radius */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-xl: 16px;
+
+  /* Font sizes */
+  --text-sm: 0.75rem;
+  --text-md: 1rem;
+  --text-lg: 1.25rem;
+  --text-xl: 1.5rem;
+  --text-2xl: 2rem;
+
+  /* Shadows */
+  --shadow: 0 20px 27px 0 rgb(0 0 0 / 5%);
+
+  /* Font weights */
+  --font-light: 300;
+  --font-normal: 400;
+  --font-semibold: 500;
+  --font-bold: 600;
+
+  /* Borders */
+  --base-border: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+/*
+ * Base styles
+ */
+
+html {
+  font-family: var(--main-font);
+}
+
+body {
+  background-color: var(--gray);
+}
+
+h1 {
+  font-size: var(--text-2xl);
+}
+h2 {
+  font-size: var(--text-xl);
+}
+h3 {
+  font-size: var(--text-lg);
+}
+p {
+  font-size: var(--text-md);
+  color: var(--secondary);
+}

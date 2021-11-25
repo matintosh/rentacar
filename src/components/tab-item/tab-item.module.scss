@@ -1,0 +1,35 @@
+.tab-item {
+  display: flex;
+  flex-direction: row;
+
+  justify-content: flex-start;
+  align-items: center;
+  gap: var(--space-lg);
+
+  padding: var(--space-xl);
+
+  font-weight: var(--font-light);
+
+  &.active {
+    font-weight: var(--font-semibold);
+  }
+  &.active .icon,
+  &:hover .icon {
+    background: var(--bs-gradient-color);
+    color: var(--white);
+  }
+
+  .icon {
+    width: 32px;
+    height: 32px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    color: var(--secondary);
+    background: var(--white);
+    border-radius: var(--radius-md);
+
+    font-size: var(--text-sm);
+  }
+}

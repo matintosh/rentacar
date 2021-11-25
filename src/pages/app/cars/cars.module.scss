@@ -1,0 +1,23 @@
+.cars-header {
+  margin-top: var(--space-xl);
+  display: flex;
+  flex-direction: row;
+
+  justify-content: space-between;
+  align-items: center;
+}
+
+.cars-list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: var(--space-xl);
+
+  margin-top: var(--space-xl);
+  overflow: auto;
+}
+
+.cars-container {
+  height: 100%;
+  display: grid;
+  grid-template-rows: 120px 1fr;
+}
