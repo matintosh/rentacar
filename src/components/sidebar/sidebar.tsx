@@ -43,6 +43,13 @@ export function Sidebar() {
             </TabItem>
           </div>
         </Link>
+        <Link href={Paths.carsSSR} passHref>
+          <div>
+            <TabItem icon={faCar} active={router.pathname.includes(Paths.carsSSR)}>
+              Autos ( SSR )
+            </TabItem>
+          </div>
+        </Link>
         <Link href={Paths.users} passHref>
           <div>
             <TabItem icon={faUsers}>Usuarios</TabItem>

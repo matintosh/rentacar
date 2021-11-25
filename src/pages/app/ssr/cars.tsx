@@ -10,7 +10,6 @@ import Link from "next/link";
 import styles from "../cars/cars.module.scss";
 import { Paths } from "utils/Paths";
 import { findCars } from "lib/find-cars";
-import { BRANCH_COOKIE_NAME } from "../cars/_middleware";
 
 export default function App({ cars }: { cars: any[] }) {
   return (
@@ -35,7 +34,8 @@ export default function App({ cars }: { cars: any[] }) {
 
 export async function getServerSideProps(ctx: any) {
   const cookies = nookies.get(ctx);
-  const cars = await findCars(cookies[BRANCH_COOKIE_NAME]);
 
-  return { props: { cars: cars } };
+  const cars = await findCars("1");
+
+  return { props: { cars } };
 }

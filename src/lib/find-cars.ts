@@ -8,10 +8,45 @@ function timeout(ms: number) {
 export const findCars = async (branch: string) => {
   await timeout(3000);
 
+  //   const { data } = await client.query({
+  //     query: gql`
+  //       query getCars {
+  //         branch(id: ${branch}) {
+  //           cars {
+  //             id
+  //             model
+  //             brand
+  //             price
+  //             plate
+  //             year
+  //             booking {
+  //               client {
+  //                 firstName
+  //                 lastName
+
+  //                 avatar {
+  //                   url
+  //                   name
+  //                 }
+  //               }
+
+  //               startDate
+  //               endDate
+  //             }
+  //             pictures {
+  //               url
+  //               name
+  //             }
+  //           }
+  //         }
+  //       }
+  //     `,
+  //   });
+
   const { data } = await client.query({
     query: gql`
       query getCars {
-        branch(id: ${branch}) {
+        branch(id: 1) {
           cars {
             id
             model
@@ -43,5 +78,5 @@ export const findCars = async (branch: string) => {
     `,
   });
 
-  return data.branch.cars
+  return data.branch.cars;
 };
