@@ -43,7 +43,7 @@ export async function getStaticProps({
     props: {
       cars,
     },
-    revalidate: 120,
+    revalidate: 10,
   };
 }
 
