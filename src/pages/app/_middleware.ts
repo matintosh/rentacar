@@ -1,6 +1,5 @@
 import { getUserFromToken } from "lib/use-user";
 import { NextRequest, NextResponse } from "next/server";
-import { setCookie } from "nookies";
 import { BRANCH_COOKIE_NAME } from "./cars/_middleware";
 
 const checkAuth = (req: NextRequest) => {
@@ -20,7 +19,9 @@ export async function middleware(req: NextRequest) {
   } catch (e) {
     console.log(e);
   }
+
   if (!user) return NextResponse.redirect("/auth/login");
+
 
   const branch = user.self.branch.id;
 

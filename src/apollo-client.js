@@ -1,11 +1,12 @@
 import { ApolloClient, InMemoryCache } from "@apollo/client";
 import { createUploadLink } from "apollo-upload-client";
+import { AppConfig } from "utils/AppConfig";
 
 const client = new ApolloClient({
-  uri: "https://polar-ravine-93732.herokuapp.com/graphql",
+  uri: AppConfig.api_url + "/graphql",
   cache: new InMemoryCache(),
   link: createUploadLink({
-    uri: "https://polar-ravine-93732.herokuapp.com/graphql",
+    uri: AppConfig.api_url + "/graphql",
   }),
 });
 

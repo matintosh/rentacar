@@ -14,7 +14,6 @@ import { findCars } from "lib/find-cars";
 import { BRANCHES } from "graphql/queries/branches";
 
 export default function App({ cars }: { cars: any[] }) {
-  console.log(cars);
   return (
     <Layout>
       <div className={styles["cars-container"]}>
@@ -44,6 +43,7 @@ export async function getStaticProps({
     props: {
       cars,
     },
+    revalidate: 120,
   };
 }
 

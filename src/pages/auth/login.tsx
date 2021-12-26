@@ -16,6 +16,7 @@ const Home: NextPage = () => {
   const [password, setPassword] = useState("");
 
   const handleLogin = (data: any) => {
+    console.log(data)
     setCookie({}, "user_token", data.login.jwt, { path: "/" });
     router.push("/app");
   };

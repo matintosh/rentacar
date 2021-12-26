@@ -72,6 +72,7 @@ export default function App({}: {}) {
           data: {
             ...body,
             pictures,
+            branch: 1
           },
         },
       },
