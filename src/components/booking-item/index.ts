@@ -1,1 +1,1 @@
-export { CarItem } from "./car-item";
+export { BookingItem } from "./booking-item";
