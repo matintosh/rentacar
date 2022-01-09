@@ -23,6 +23,7 @@ export async function middleware(req: NextRequest) {
   if (!user) return NextResponse.redirect("/auth/login");
 
 
+  console.log(user)
   const branch = user.self.branch.id;
 
   const res = NextResponse.rewrite(req.url);

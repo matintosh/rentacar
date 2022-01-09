@@ -1,6 +1,7 @@
 import client from "../apollo-client";
 import nookies from "nookies";
 import { CURRENT_USER } from "graphql/queries/current-user";
+import { AppConfig } from "utils/AppConfig";
 
 export async function getUser(ctx: any) {
   const cookies = nookies.get(ctx);
@@ -13,7 +14,7 @@ export async function getUser(ctx: any) {
 }
 
 export async function getUserFromToken(token: string) {
-  const data = await fetch("https://polar-ravine-93732.herokuapp.com/graphql", {
+  const data = await fetch(`${AppConfig.api_url}/graphql`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
