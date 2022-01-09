@@ -5,6 +5,8 @@
   --accent: #ee7573;
   --white: #ffffff;
   --gray: #f7f8f9;
+  --gray-border: #dadee2;
+
 
   --bs-blue: #63b3ed;
   --bs-indigo: #596cff;
@@ -47,6 +49,8 @@
   --space-lg: 8px;
   --space-xl: 16px;
   --space-2xl: 32px;
+  --space-3xl: 64px;
+
 
   /* Border radius */
   --radius-sm: 4px;
@@ -72,6 +76,7 @@
 
   /* Borders */
   --base-border: 1px solid rgba(0, 0, 0, 0.2);
+  --border-indicator: 6px solid var(--primary);
 }
 
 /*
@@ -83,7 +88,7 @@ html {
 }
 
 body {
-  background-color: var(--gray);
+  background-color: var(--white);
 }
 
 h1 {

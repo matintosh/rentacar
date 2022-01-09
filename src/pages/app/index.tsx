@@ -7,15 +7,8 @@ export default function App({ user }: { user: any }) {
   console.log("user client");
   return (
     <Layout>
-      My profile
-      <ul>
-        {user &&
-          user.self &&
-          Object.entries(user.self).map(([name, value]) => (
-            <li key={name}></li>
-          ))}
-      </ul>
-      <Button>Set cookie</Button>
+      <h2>Fiumba!</h2>
+      <Button>Hacer reserva</Button>
     </Layout>
   );
 }

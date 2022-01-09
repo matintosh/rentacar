@@ -4,19 +4,45 @@
 
   justify-content: flex-start;
   align-items: center;
+
   gap: var(--space-lg);
 
   padding: var(--space-xl);
 
   font-weight: var(--font-light);
 
+  box-sizing: border-box;
+
+  border-left: var(--border-indicator);
+
+  border-left-width: 0px;
+
+  cursor: pointer;
+  
+  &:hover {
+    background-color: var(--bs-light);
+  }
+
   &.active {
     font-weight: var(--font-semibold);
+    border-left: var(--border-indicator);
+
+    animation: border-animation 120ms ease-in-out;
+
+    .label {
+      margin-left: calc(var(--space-2xl) - 6px);
+      color: var(--black);
+    }
   }
   &.active .icon,
   &:hover .icon {
     background: var(--bs-gradient-color);
     color: var(--white);
+  }
+
+  .label {
+    margin-left: calc(var(--space-2xl) - 4px);
+    color: var(--bs-secondary);
   }
 
   .icon {
@@ -31,5 +57,15 @@
     border-radius: var(--radius-md);
 
     font-size: var(--text-sm);
+  }
+}
+
+// moving border for indicator in side bar
+@keyframes border-animation {
+  0% {
+    border-left-width: 0px;
+  }
+  100% {
+    border-left-width: 6px;
   }
 }

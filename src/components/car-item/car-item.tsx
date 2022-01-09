@@ -5,6 +5,7 @@ import styles from "./car-item.module.scss";
 import Carousel from "framer-motion-carousel";
 import { Button } from "@components/button";
 
+
 export interface CarItemProps {
   model: string;
   brand: string;
@@ -89,7 +90,7 @@ export function CarItem({
       )}
       {!booking && (
         <div className={styles["car-booking-now"]}>
-          <Button className={styles['book-now']}>Reservar ahora</Button>
+          <Button className={styles["book-now"]}>Reservar ahora</Button>
         </div>
       )}
     </Card>

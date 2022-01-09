@@ -12,23 +12,32 @@ import { Paths } from "utils/Paths";
 import { GetStaticPropsContext } from "next";
 import { findCars } from "lib/find-cars";
 import { BRANCHES } from "graphql/queries/branches";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faSearch } from "@fortawesome/free-solid-svg-icons";
+import { CarTable } from "@components/car-table/car-table";
 
 export default function App({ cars }: { cars: any[] }) {
+
+  console.log(cars)
   return (
     <Layout>
       <div className={styles["cars-container"]}>
-        <Card className={styles["cars-header"]}>
+        <div className={styles["cars-header"]}>
           <h2>Vehiculos</h2>
-          <Link href={Paths.newCar} passHref>
-            <Button>Nuevo vehiculo</Button>
-          </Link>
-        </Card>
+          <div className={styles["cars-header-actions"]}>
+            <FontAwesomeIcon icon={faSearch} />
+            <Link href={Paths.newCar} passHref>
+              <Button>+ Nuevo</Button>
+            </Link>
+          </div>
+        </div>
 
-        <div className={styles["cars-list"]}>
+        {/* <div className={styles["cars-list"]}>
           {cars &&
             cars.length &&
-            cars.map((c) => <CarItem {...c} key={c.id} />)}
-        </div>
+            cars.map\((c) => <CarItem {...c} key={c.id} />)}
+        </div> */}
+        <CarTable data={cars}/>
       </div>
     </Layout>
   );

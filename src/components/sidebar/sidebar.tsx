@@ -4,6 +4,7 @@ import Link from "next/link";
 import {
   faBookmark,
   faCar,
+  faCarAlt,
   faDiceFive,
   faMoneyCheck,
   faPeopleArrows,
@@ -17,6 +18,7 @@ import styles from "./sidebar.module.scss";
 import { useRouter } from "next/router";
 import { useMemo } from "react";
 import { Paths } from "utils/Paths";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 export function Sidebar() {
   const router = useRouter();
@@ -25,7 +27,10 @@ export function Sidebar() {
     <div className={styles.sidebar}>
       <div className={styles.brand}>
         <Link href={Paths.app} passHref>
-          <h3>Rent a car</h3>
+          <>
+            <FontAwesomeIcon className={styles['brand-icon']} icon={faCarAlt} />
+            <h3>Rent a car</h3>
+          </>
         </Link>
       </div>
       <div>
@@ -40,13 +45,6 @@ export function Sidebar() {
           <div>
             <TabItem icon={faCar} active={router.pathname.includes(Paths.cars)}>
               Autos
-            </TabItem>
-          </div>
-        </Link>
-        <Link href={Paths.carsSSR} passHref>
-          <div>
-            <TabItem icon={faCar} active={router.pathname.includes(Paths.carsSSR)}>
-              Autos ( SSR )
             </TabItem>
           </div>
         </Link>

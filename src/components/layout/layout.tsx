@@ -10,7 +10,6 @@ export function Layout({ children }: LayoutProps) {
     <div className={styles.layout}>
       <Sidebar />
       <main>
-        <Header />
         <div className={styles.content}>{children}</div>
       </main>
     </div>

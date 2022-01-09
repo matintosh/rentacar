@@ -1,0 +1,31 @@
+.car-item-avatar {
+  display: flex;
+  flex-direction: row;
+  gap: var(--space-xl);
+  height: 100%;
+  align-items: center;
+
+  .car-image {
+    border-radius: var(--radius-lg);
+    background-color: var(--gray);
+    padding: var(--space-lg) !important;
+  }
+
+  .car-avatar-model {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+
+    p {
+      font-size: var(--text-lg);
+      font-weight: var(--font-semibold);
+      color: var(--bs-gray-dark);
+    }
+    .car-model {
+      font-size: var(--text-sm);
+      font-weight: var(--font-light);
+      color: var(--secondary);
+    }
+  }
+}

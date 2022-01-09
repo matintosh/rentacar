@@ -23,17 +23,17 @@ export function TabItem({
 
   const cardContent = (
     <>
-      {icon && (
+      {/* {icon && (
         <div className={styles.icon}>
           <FontAwesomeIcon icon={icon} />
         </div>
-      )}
-      <p>{children}</p>
+      )} */}
+      <p className={styles.label}>{children}</p>
     </>
   );
 
   return active ? (
-    <Card className={tabItemStyles}>{cardContent}</Card>
+    <div className={tabItemStyles}>{cardContent}</div>
   ) : (
     <div className={tabItemStyles}>{cardContent}</div>
   );

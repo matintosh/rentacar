@@ -1,0 +1,40 @@
+.table {
+  width: 100%;
+
+  table {
+    width: 100%;
+    border-spacing: 0;
+
+    tr {
+      :last-child {
+        td {
+          border-bottom: 0;
+        }
+      }
+    }
+
+    thead tr:nth-child(1) {
+      border-top: 1px solid var(--secondary);
+      border-bottom: 1px solid var(--secondary);
+      color: var(--secondary);
+      th {
+          padding: 0;
+      }
+    }
+    th,
+    td {
+      margin: 0;
+      padding: 1.5rem 0;
+
+      border-top: 1px solid var(--gray-border);
+
+      :last-child {
+        border-right: 0;
+      }
+    }
+
+    td[role="cell"] {
+      vertical-align: middle;
+    }
+  }
+}
